@@ -6,4 +6,4 @@
 * 登录界面
 ![登录界面](https://images.gitee.com/uploads/images/2019/0625/095124_62d00aba_1727021.jpeg "QQ截图20190625095029.jpg")
 * 首页
-![登录首页](https://images.gitee.com/uploads/images/2019/0625/095320_53683a69_1727021.jpeg "首页.jpg")
+![首页](https://images.gitee.com/uploads/images/2019/0625/103613_b6b3d7f6_1727021.jpeg "QQ截图20190625103414.jpg")
