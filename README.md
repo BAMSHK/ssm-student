@@ -1,6 +1,6 @@
 ## 学生信息管理系统
 使用ssm框架+mysql
-\ No newline at end of file
+
 ~ 使用ssm框架+mysql
 ------------------------------
 * 登录界面
