@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zxh.mapper.StudentMapper">
+	<resultMap type="Student" id="BaseMapper">
+		<id property="id" column="id" />
+		<result property="name" column="name" />
+		<result property="age" column="age" />
+		<result property="gender" column="gender" />
+		<result property="number" column="number" />
+		<result property="address" column="address" />
+		<result property="status" column="status" />
+	</resultMap>
+	<select id="findStudentById" parameterType="Integer" resultType="Student">
+		select * from students where id=#{id}
+	</select>
+	<select id="listStudent" resultMap="BaseMapper">
+		select * from students 
+	</select>
+	<update id="updateStudent" parameterType="Student">
+		update students set name=#{name},age=#{age},gender=#{gender},number=#{number}
+		,address=#{address},status=#{status}
+		where id=#{id}
+	</update>
+	<delete id="deleteStudent" parameterType="Integer">
+		delete from students where id=#{id}
+	</delete>
+	<insert id="addStudent" parameterType="Student">
+		insert into students (name,age,gender,number,address,status)
+		values(
+		#{name},
+		#{age},
+		#{gender},
+		#{number},
+		#{address},
+		#{status}
+		)
+	</insert>
+	<select id="findStudentByMultiterm" parameterType="Student" resultType="Student">
+		select * from students
+		<where>
+			<if test="name !=null and name !=''" >
+				and name like concat('%',#{name},'%')
+			</if>
+			<if test="gender !=null and gender !=''" >
+				and gender=#{gender}
+			</if>
+			<if test="status !=null and status !=''" >
+				and status=#{status}
+			</if>
+		</where>
+	</select>
+</mapper>
